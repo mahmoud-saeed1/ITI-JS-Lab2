@@ -133,6 +133,7 @@ h2 {
 
 table {
     width: 100%;
+    padding: 2px;
     background-color: #fff;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 1rem;
@@ -140,27 +141,39 @@ table {
 
 th:first-child{
     border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
 }
 th:last-child{
     border-top-right-radius: 1rem;
-}
-
-th,
-td {
-  padding: 16px;
-  text-align: left;
-  border-bottom: 1px solid #f2f2f2;
-}
-
-th {
-  background-color: #f8f8f8;
-  font-weight: bold;
-  color: #555;
+  }
+  
+  th,
+  td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #f2f2f2;
+  }
+  
+  th {
+    background-color: #007bff;
+    font-weight: bold;
+    color: #fff;
 }
 
 td {
   color: #777;
+  text-transform: capitalize;
 }
+
+table tr:nth-child(even) {
+  background-color: #007bff49
+}
+
+table tr{
+ border-radius: 1rem;
+}
+
+
 
 /*~~~~~~~$ Button Styles $~~~~~~~*/
 .buttons {
@@ -231,4 +244,89 @@ td {
   td {
     padding: 10px;
   }
+}
+
+.empty-table{
+  text-align: center;
+  margin-top: 200px;
+}
+
+/*~~~~~~~$ Popup $~~~~~~~*/
+.custom-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5) rotate(-45deg);
+  padding: 1rem;
+  background: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  z-index: 1000;
+}
+.custom-popup.show {
+  transform: translate(-50%, -50%) scale(1) rotate(0);
+  opacity: 1;
+}
+.custom-popup.info {
+  border-color: #007bff;
+}
+.custom-popup.success {
+  border-color: #28a745;
+}
+.custom-popup.error {
+  border-color: #dc3545;
+}
+.custom-popup.confirm {
+  border-color: #ffc107;
+}
+.custom-popup .popup-content {
+  text-align: center;
+}
+.custom-popup .popup-content p {
+  margin-bottom: 1rem;
+}
+.custom-popup .popup-close {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.custom-popup .popup-close:hover {
+  background: #0056b3;
+}
+.custom-popup.confirm .popup-content div {
+  display: flex;
+  gap: 1rem;
+}
+.custom-popup.confirm button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.custom-popup.confirm button:first-child {
+  background: #28a745;
+  color: #fff;
+}
+.custom-popup.confirm button:first-child:hover {
+  background: #218838;
+}
+.custom-popup.confirm button:last-child {
+  background: #dc3545;
+  color: #fff;
+}
+.custom-popup.confirm button:last-child:hover {
+  background: #c82333;
+}
+form.editing input {
+  border-color: #ffc107;
+  background-color: #fff3cd;
+}
+form.editing input:focus {
+  box-shadow: 0 0 5px #ffc107;
 }

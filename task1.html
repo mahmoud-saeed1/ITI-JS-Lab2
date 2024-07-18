@@ -9,12 +9,14 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="./asstes/style/task1.css" />
+ <!-- shortcut image -->
+ <link rel="icon" type="image/x-icon" href="./ITILogo.webp">    <link rel="stylesheet" href="./asstes/style/task1.css" />
   </head>
   <body>
     <div class="container">
       <h1>student form</h1>
-      <form class="form" action="">
+      <!--~~~~~~~$ Student Form $~~~~~~~-->
+      <form class="form" action="" id="student-form">
         <!--~~~~~~~$ Department Section $~~~~~~~-->
         <div class="form__group">
           <label class="form__label" for="department">Department:</label>
@@ -24,10 +26,11 @@
               type="radio"
               id="department1"
               name="department"
-              value="1"
+              value="computerScience"
+              checked
             />
             <label class="form__radio-label" for="department1"
-              >Department 1</label
+              >computer science</label
             >
           </div>
           <div class="form__radio-group">
@@ -36,11 +39,9 @@
               type="radio"
               id="department2"
               name="department"
-              value="2"
+              value="business"
             />
-            <label class="form__radio-label" for="department2"
-              >Department 2</label
-            >
+            <label class="form__radio-label" for="department2">business</label>
           </div>
           <div class="form__radio-group">
             <input
@@ -48,10 +49,10 @@
               type="radio"
               id="department3"
               name="department"
-              value="3"
+              value="engineering"
             />
             <label class="form__radio-label" for="department3"
-              >Department 3</label
+              >engineering</label
             >
           </div>
         </div>
@@ -65,46 +66,50 @@
           <input
             class="form__input"
             type="text"
-            id="studentname"
+            id="student-name"
             placeholder="Enter student name"
           />
         </div>
 
-        <!--~~~~~~~$ Student Grade Section $~~~~~~~-->
+        <!--~~~~~~~$ Student score Section $~~~~~~~-->
         <div class="form__group">
-          <label class="form__label" for="studentGrade">
+          <label class="form__label" for="studentScore">
             <i class="form__icon fa-solid fa-graduation-cap"></i>
-            Student Grade
+            Student Score
           </label>
           <input
             class="form__input"
             type="text"
-            id="studentGrade"
-            placeholder="Enter student grade"
+            id="student-score"
+            placeholder="Enter student score"
           />
         </div>
 
         <!--~~~~~~~$ Add Student Button $~~~~~~~-->
         <div class="form__group">
-          <button class="form__button">
+          <button class="form__button" id="add-btn">
             <i class="form__icon fa-solid fa-plus"></i>
             Add Student
           </button>
         </div>
 
-        <!--~~~~~~~$ Sort and Filter Section $~~~~~~~-->
+        <!--~~~~~~~$ Sort Section $~~~~~~~-->
         <div class="form__group">
           <label class="form__label" for="sort">
             <i class="form__icon fa-solid fa-sort"></i>
             Sort by:
           </label>
           <select class="form__input" name="sort" id="sort">
-            <option value="name">Name</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-            <option value="option3">Option 3</option>
+            <option value="gpa_desc">none</option>
+            <option value="gpa_desc">GPA High to Low</option>
+            <option value="gpa_asc">GPA Low to High</option>
+            <option value="name_desc">Name High to Low</option>
+            <option value="name_asc">Name Low to High</option>
           </select>
         </div>
+        
+
+        <!--~~~~~~~$ Filter Section $~~~~~~~-->
         <div class="form__group">
           <label class="form__label" for="filter">
             <i class="form__icon fa-solid fa-filter"></i>
@@ -112,9 +117,35 @@
           </label>
           <select class="form__input" name="filter" id="filter">
             <option value="all">All</option>
-            <option value="name">Name</option>
-            <option value="grad">Grade</option>
+            <option value="passed">Passed</option>
+            <option value="failed">Failed</option>
+            <option value="a">Get (A)</option>
+            <option value="aMinus">Get (-A)</option>
+            <option value="bPlus">Get (B+)</option>
+            <option value="b">Get (B)</option>
+            <option value="bMinus">Get (-B)</option>
+            <option value="cPlus">Get (C+)</option>
+            <option value="c">Get (C)</option>
+            <option value="cMinus">Get (-C)</option>
+            <option value="dPlus">Get (D+)</option>
+            <option value="d">Get (D)</option>
+            <option value="f">Fail (F)</option>
           </select>
+        </div>
+
+        <!--~~~~~~~$ Search Section $~~~~~~~-->
+        <div class="form__group">
+          <label class="form__label" for="filter">
+            <i class="form__icon fa-solid fa-search"></i>
+            Search:
+          </label>
+          <input
+            class="form__input"
+            type="text"
+            id="search"
+            title="Enter search query"
+            placeholder="Search..."
+          />
         </div>
       </form>
 
@@ -127,50 +158,16 @@
               <th>Name</th>
               <th>Department</th>
               <th>Degree</th>
-              <th>Grade</th>
+              <th>score</th>
               <th>Actions</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>John Doe</td>
-              <td>Computer Science</td>
-              <td>85</td>
-              <td>A-</td>
-              <td>
-                <div class="buttons">
-                  <button>Update</button>
-                  <button class="delete">Delete</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Jane Smith</td>
-              <td>Business</td>
-              <td>92</td>
-              <td>A</td>
-              <td>
-                <div class="buttons">
-                  <button>Update</button>
-                  <button class="delete">Delete</button>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td>Michael Johnson</td>
-              <td>Engineering</td>
-              <td>78</td>
-              <td>B+</td>
-              <td>
-                <div class="buttons">
-                  <button>Update</button>
-                  <button class="delete">Delete</button>
-                </div>
-              </td>
-            </tr>
+         
           </tbody>
         </table>
       </div>
     </div>
+    <script src="./js/task1.js"></script>
   </body>
 </html>
