@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 1</title>
+    <!--~~~~~~~$ Font Awesome Library $~~~~~~~-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./asstes/style/task1.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>student form</h1>
+      <form class="form" action="">
+        <!--~~~~~~~$ Department Section $~~~~~~~-->
+        <div class="form__group">
+          <label class="form__label" for="department">Department:</label>
+          <div class="form__radio-group">
+            <input
+              class="form__radio-input"
+              type="radio"
+              id="department1"
+              name="department"
+              value="1"
+            />
+            <label class="form__radio-label" for="department1"
+              >Department 1</label
+            >
+          </div>
+          <div class="form__radio-group">
+            <input
+              class="form__radio-input"
+              type="radio"
+              id="department2"
+              name="department"
+              value="2"
+            />
+            <label class="form__radio-label" for="department2"
+              >Department 2</label
+            >
+          </div>
+          <div class="form__radio-group">
+            <input
+              class="form__radio-input"
+              type="radio"
+              id="department3"
+              name="department"
+              value="3"
+            />
+            <label class="form__radio-label" for="department3"
+              >Department 3</label
+            >
+          </div>
+        </div>
+
+        <!--~~~~~~~$ Student Name Section $~~~~~~~-->
+        <div class="form__group">
+          <label class="form__label" for="studentname">
+            <i class="form__icon fa-solid fa-user"></i>
+            Student Name
+          </label>
+          <input
+            class="form__input"
+            type="text"
+            id="studentname"
+            placeholder="Enter student name"
+          />
+        </div>
+
+        <!--~~~~~~~$ Student Grade Section $~~~~~~~-->
+        <div class="form__group">
+          <label class="form__label" for="studentGrade">
+            <i class="form__icon fa-solid fa-graduation-cap"></i>
+            Student Grade
+          </label>
+          <input
+            class="form__input"
+            type="text"
+            id="studentGrade"
+            placeholder="Enter student grade"
+          />
+        </div>
+
+        <!--~~~~~~~$ Add Student Button $~~~~~~~-->
+        <div class="form__group">
+          <button class="form__button">
+            <i class="form__icon fa-solid fa-plus"></i>
+            Add Student
+          </button>
+        </div>
+
+        <!--~~~~~~~$ Sort and Filter Section $~~~~~~~-->
+        <div class="form__group">
+          <label class="form__label" for="sort">
+            <i class="form__icon fa-solid fa-sort"></i>
+            Sort by:
+          </label>
+          <select class="form__input" name="sort" id="sort">
+            <option value="name">Name</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label class="form__label" for="filter">
+            <i class="form__icon fa-solid fa-filter"></i>
+            Filter:
+          </label>
+          <select class="form__input" name="filter" id="filter">
+            <option value="all">All</option>
+            <option value="name">Name</option>
+            <option value="grad">Grade</option>
+          </select>
+        </div>
+      </form>
+
+      <!--~~~~~~~$ Student Information Table $~~~~~~~-->
+      <div class="student-infromation">
+        <h2>Student Information</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Department</th>
+              <th>Degree</th>
+              <th>Grade</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Doe</td>
+              <td>Computer Science</td>
+              <td>85</td>
+              <td>A-</td>
+              <td>
+                <div class="buttons">
+                  <button>Update</button>
+                  <button class="delete">Delete</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Jane Smith</td>
+              <td>Business</td>
+              <td>92</td>
+              <td>A</td>
+              <td>
+                <div class="buttons">
+                  <button>Update</button>
+                  <button class="delete">Delete</button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Michael Johnson</td>
+              <td>Engineering</td>
+              <td>78</td>
+              <td>B+</td>
+              <td>
+                <div class="buttons">
+                  <button>Update</button>
+                  <button class="delete">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
