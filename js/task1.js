@@ -133,11 +133,11 @@ function handleFormSubmit(event) {
   const department = form.department.value;
 
   if (!validateName(name)) {
-    showError(studentNameInput, "Invalid name");
+    showError(studentNameInput, "*Invalid name");
     return;
   }
   if (!validateScore(score)) {
-    showError(studentScoreInput, "Invalid score");
+    showError(studentScoreInput, "*Invalid score");
     return;
   }
 
@@ -153,7 +153,8 @@ function handleFormSubmit(event) {
     currentEditingIndex = null;
     addBtn.innerText = "Add Student";
     showPopup("Student updated successfully", "success");
-    form.classList.remove("editing");
+    studentNameInput.classList.remove("editing");
+    studentScoreInput.classList.remove("editing");
   } else {
     students.push(student);
     showPopup("Student added successfully", "success");
@@ -165,14 +166,19 @@ function handleFormSubmit(event) {
 }
 
 // ? Function to edit a student
-function editStudent(index) {
+function /* The `editStudent` function is responsible for populating the form fields with the details
+of a selected student for editing. When a user clicks the "Update" button on a specific
+student row in the table, the `editStudent` function is called with the index of that
+student in the `students` array. */
+editStudent(index) {
   const student = students[index];
   studentNameInput.value = student.name;
   studentScoreInput.value = student.score;
   form.department.value = student.department;
   currentEditingIndex = index;
   addBtn.innerText = "Update Student";
-  form.classList.add("editing");
+  studentNameInput.classList.add("editing");
+  studentScoreInput.classList.add("editing");
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
