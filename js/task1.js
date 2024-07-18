@@ -59,7 +59,6 @@ function renderTable(studentsToRender = students) {
     tr.innerHTML = `
       <td>${student.name}</td>
       <td>${student.department}</td>
-      <td>${student.score}</td>
       <td>${student.grade}</td>
       <td>
         <div class="buttons">
