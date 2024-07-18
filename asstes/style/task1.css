@@ -1,7 +1,7 @@
 /*~~~~~~~$ Global Variables $~~~~~~~*/
 :root {
   --main-bg-color: #f0f0f0;
-  --primary-color: #007bff;
+  --primary-color: #222;
   --success-color: #28a745;
   --error-color: #dc3545;
   --warning-color: #ffc107;
@@ -182,7 +182,7 @@ td {
 }
 
 table tr:nth-child(even) {
-  background-color: #007bff2c;
+  background-color: #2222222a;
 }
 
 table tr {
