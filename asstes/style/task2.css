@@ -1,0 +1,56 @@
+/*~~~~~~~$ Global Variables $~~~~~~~*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 90%;
+    margin: 20px;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+#box1 {
+    background-color: #e74c3c;
+}
+
+#box2 {
+    background-color: #3498db;
+}
+
+#box3 {
+    background-color: #2ecc71;
+}
+
+@media (min-width: 600px) {
+    .container {
+        max-width: 600px;
+    }
+
+    .box {
+        width: 150px;
+        height: 150px;
+    }
+}

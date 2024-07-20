@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Falling Egg Game</title>
+    <link rel="stylesheet" href="./asstes/style/task3.css" />
+  </head>
+  <body>
+    <!--~~~~~~~$ Main Container $~~~~~~~-->
+    <div class="container">
+      <!--~~~~~~~$ Scoreboard $~~~~~~~-->
+      <div class="scoreboard" id="scoreboard">
+        <span id="score">Score: 0</span>
+      </div>
+
+      <!--~~~~~~~$ Basket $~~~~~~~-->
+      <div class="basket" id="basket"></div>
+
+      <!--~~~~~~~$ controls $~~~~~~~-->
+      <div class="controls" id="controls">
+        <button id="move-left"><</button>
+        <button id="move-right">></button>
+      </div>
+    </div>
+
+    <!--~~~~~~~$ Start Playing Buttons $~~~~~~~-->
+    <div class="game-over" id="game-over">
+      <p id="final-score"></p>
+      <button id="play-again">Play Again</button>
+    </div>
+    <button id="start-game">Start Game</button>
+    <script src="./js/task3.js"></script>
+  </body>
+</html>

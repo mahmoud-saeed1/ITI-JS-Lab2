@@ -37,11 +37,15 @@ function validateScore(score) {
 // ? Function to calculate grade based on score
 function calculateGrade(score) {
   if (score >= 90) return "A";
-  if (score >= 80) return "A-";
-  if (score >= 70) return "B+";
-  if (score >= 60) return "B";
-  if (score >= 50) return "C+";
-  if (score >= 40) return "C";
+  if (score < 90 && score >= 85) return "-A";
+  if (score < 85 && score >= 80) return "B+";
+  if (score < 80 && score >= 75) return "B";
+  if (score < 75 && score >= 70) return "-B";
+  if (score < 75 && score >= 70) return "c+";
+  if (score < 70 && score >= 65) return "c";
+  if (score < 65 && score >= 60) return "-c";
+  if (score < 60 && score >= 55) return "D+";
+  if (score < 55 && score >= 50) return "D";
   return "F";
 }
 
@@ -51,7 +55,7 @@ function renderTable(studentsToRender = students) {
   studentTableBody.innerHTML = "";
   if (studentsToRender.length === 0) {
     studentTableBody.innerHTML =
-      '<tr><td colspan="5" class="empty-table"><p>The table is empty</p></td></tr>';
+      '<tr><td colspan="5" class="empty-table"><p>No student data added yet!</p></td></tr>';
     return;
   }
   studentsToRender.forEach((student, index) => {
